@@ -1,7 +1,7 @@
 // Ripple Effect
 document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('click', function(e) {
-    // Prevent double-ripple if toggle button is clicked
+    // Skip ripple for toggle button
     if (this.classList.contains('toggle-btn')) return;
 
     let ripple = document.createElement("span");
@@ -16,13 +16,26 @@ document.querySelectorAll('.btn').forEach(btn => {
   });
 });
 
-// Dark Mode Toggle
+// Dark Mode Toggle with LocalStorage
 const toggleBtn = document.querySelector('.toggle-btn');
+
+// Apply saved theme on load
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+  if (toggleBtn) toggleBtn.textContent = "☀️ Toggle Light Mode";
+}
+
 if (toggleBtn) {
   toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    toggleBtn.textContent = document.body.classList.contains('dark') 
-      ? "☀️ Toggle Light Mode" 
-      : "🌙 Toggle Dark Mode";
+
+    // Save preference
+    if (document.body.classList.contains('dark')) {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.textContent = "☀️ Toggle Light Mode";
+    } else {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "🌙 Toggle Dark Mode";
+    }
   });
 }
