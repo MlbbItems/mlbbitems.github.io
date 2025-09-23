@@ -21,18 +21,25 @@
   <main>
     <div class="card">
       <h2>Get in Touch</h2>
-      <form>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+     <form action="https://api.web3forms.com/submit" method="POST">
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="f62a99e9-900d-4fa7-b23c-7aa108172e69">
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+    <input type="text" name="name" required>
+    <input type="email" name="email" required>
+    <textarea name="message" required></textarea>
 
-        <button type="submit" class="btn">Send</button>
-      </form>
+    <!-- Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+    <!-- Custom Confirmation / Success Page -->
+    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+    <button type="submit">Submit Form</button>
+
+</form>
     </div>
     <button class="btn toggle-btn">🌙 Toggle Dark Mode</button>
   </main>
