@@ -1,69 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Simple Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background: #4a90e2;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            background: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-        footer {
-            background: #4a90e2;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Modern Material Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ===== Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: #6200ea;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* ===== Nav ===== */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #3700b3;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    /* ===== Main ===== */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin: 20px 0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      color: #6200ea;
+    }
+
+    /* ===== Button with ripple ===== */
+    .btn {
+      position: relative;
+      overflow: hidden;
+      background: #6200ea;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #3700b3;
+    }
+    .btn span.ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      background: rgba(255,255,255,0.7);
+    }
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #6200ea;
+      color: white;
+      margin-top: 40px;
+    }
+
+    /* ===== Dark Mode ===== */
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    body.dark .card {
+      background: #1e1e1e;
+      color: #e0e0e0;
+    }
+    body.dark header, body.dark footer {
+      background: #1f1f1f;
+    }
+    body.dark nav {
+      background: #333;
+    }
+    body.dark nav a {
+      color: #bb86fc;
+    }
+    body.dark .card h2 {
+      color: #bb86fc;
+    }
+    body.dark .btn {
+      background: #bb86fc;
+    }
+    body.dark .btn:hover {
+      background: #985eff;
+    }
+
+    .toggle-btn {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Simple Website</h1>
-    </header>
+  <header>
+    🌟 My Modern Material Website
+  </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Contact</a>
+  </nav>
 
-    <main>
-        <h2>Hello, world!</h2>
-        <p>This is a simple HTML website.</p>
-    </main>
+  <main>
+    <div class="card">
+      <h2>Welcome!</h2>
+      <p>This is a modern Material Design inspired website built with HTML, CSS, and JavaScript.</p>
+      <button class="btn">Click Me</button>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 My Website</p>
-    </footer>
+    <button class="btn toggle-btn">🌙 Toggle Dark Mode</button>
+  </main>
+
+  <footer>
+    &copy; 2025 My Website | Made with ❤️
+  </footer>
+
+  <script>
+    // Ripple Effect
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        let ripple = document.createElement("span");
+        ripple.classList.add("ripple");
+        ripple.style.left = e.clientX - e.target.offsetLeft + "px";
+        ripple.style.top = e.clientY - e.target.offsetTop + "px";
+        this.appendChild(ripple);
+
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Dark Mode Toggle
+    const toggleBtn = document.querySelector('.toggle-btn');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? "☀️ Toggle Light Mode" : "🌙 Toggle Dark Mode";
+    });
+  </script>
 </body>
 </html>
