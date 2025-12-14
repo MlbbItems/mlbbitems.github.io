@@ -27,7 +27,6 @@ header {
   align-items: center;
   justify-content: center;
   gap: 12px;
-
   background: #6200ea;
   color: white;
   padding: 20px;
@@ -73,7 +72,7 @@ main {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  max-width: 800px; /* fits screenshots */
+  max-width: 800px; /* fits screenshots + app info */
   width: 100%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   margin: 20px 0;
@@ -95,18 +94,53 @@ main {
   margin-bottom: 16px;
 }
 
-/* ===== Screenshots ===== */
+/* ===== App Preview ===== */
+.app-preview {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* wrap on small screens */
+  align-items: flex-start;
+}
+
+/* Screenshots layout */
 .screenshots {
   display: flex;
+  flex-direction: column; /* vertical on desktop */
   gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .screenshots img {
   width: 200px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* App info layout (right of screenshots) */
+.app-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 220px;
+  text-align: center;
+}
+
+.app-info h3 {
+  color: #6200ea;
+  margin: 0;
+}
+
+.app-info p {
+  font-size: 0.95rem;
+}
+
+.app-info .app-icon-large {
+  width: 80px;
+  height: 80px;
+}
+
+.app-info .btn {
+  margin-top: 10px;
 }
 
 /* ===== Buttons ===== */
@@ -132,7 +166,7 @@ main {
   margin-top: 20px;
 }
 
-/* Ripple effect (optional JS support) */
+/* Ripple effect */
 .btn span.ripple {
   position: absolute;
   border-radius: 50%;
@@ -214,30 +248,25 @@ textarea:focus {
   border-color: #6200ea;
   outline: none;
 }
-.app-preview {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap; /* responsive on small screens */
-  align-items: flex-start;
-}
 
-.app-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center icon + text */
-  gap: 12px;
-}
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .app-preview {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.app-info h3 {
-  color: #6200ea;
-  margin: 0;
-}
+  .screenshots {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.app-info p {
-  text-align: center;
-  max-width: 200px;
-}
+  .screenshots img {
+    width: 150px;
+  }
 
-.app-info .btn {
-  margin-top: 10px;
+  .app-info {
+    max-width: 100%;
+  }
 }
