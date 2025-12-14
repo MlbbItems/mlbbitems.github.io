@@ -3,37 +3,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}.banner img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.5rem;
-}
-
-.app-icon {
-  width: 48px;
-  height: 48px;
-}
-
-.screenshots {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.screenshots img {
-  width: 200px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
+/* ===== Base ===== */
 body {
   font-family: "Roboto", sans-serif;
   background: #f5f5f5;
@@ -41,14 +13,31 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+/* ===== Banner ===== */
+.banner img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
 /* ===== Header ===== */
 header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
   background: #6200ea;
   color: white;
   padding: 20px;
-  text-align: center;
   font-size: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.app-icon {
+  width: 48px;
+  height: 48px;
 }
 
 /* ===== Nav ===== */
@@ -59,12 +48,14 @@ nav {
   background: #3700b3;
   padding: 10px;
 }
+
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s;
 }
+
 nav a:hover {
   opacity: 0.8;
 }
@@ -77,27 +68,48 @@ main {
   padding: 40px 20px;
 }
 
+/* ===== Card ===== */
 .card {
   background: white;
   border-radius: 12px;
   padding: 20px;
-  max-width: 400px;
+  max-width: 800px; /* fits screenshots */
   width: 100%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   margin: 20px 0;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
+
 .card h2 {
   margin-bottom: 10px;
   font-size: 1.4rem;
   color: #6200ea;
 }
 
-/* ===== Button with ripple ===== */
+.card p {
+  margin-bottom: 16px;
+}
+
+/* ===== Screenshots ===== */
+.screenshots {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.screenshots img {
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== Buttons ===== */
 .btn {
   position: relative;
   overflow: hidden;
@@ -111,9 +123,16 @@ main {
   margin-top: 15px;
   transition: background 0.3s;
 }
+
 .btn:hover {
   background: #3700b3;
 }
+
+.toggle-btn {
+  margin-top: 20px;
+}
+
+/* Ripple effect (optional JS support) */
 .btn span.ripple {
   position: absolute;
   border-radius: 50%;
@@ -121,6 +140,7 @@ main {
   animation: ripple 0.6s linear;
   background: rgba(255,255,255,0.7);
 }
+
 @keyframes ripple {
   to {
     transform: scale(4);
@@ -142,47 +162,55 @@ body.dark {
   background: #121212;
   color: #e0e0e0;
 }
+
 body.dark .card {
   background: #1e1e1e;
   color: #e0e0e0;
 }
-body.dark header, body.dark footer {
+
+body.dark header,
+body.dark footer {
   background: #1f1f1f;
 }
+
 body.dark nav {
   background: #333;
 }
+
 body.dark nav a {
   color: #bb86fc;
 }
+
 body.dark .card h2 {
   color: #bb86fc;
 }
+
 body.dark .btn {
   background: #bb86fc;
 }
+
 body.dark .btn:hover {
   background: #985eff;
 }
 
-.toggle-btn {
-  margin-top: 20px;
-}
-
-/* ===== Contact Form ===== */
+/* ===== Forms (future pages) ===== */
 form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-input, textarea {
+
+input,
+textarea {
   width: 100%;
   padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
 }
-input:focus, textarea:focus {
+
+input:focus,
+textarea:focus {
   border-color: #6200ea;
   outline: none;
 }
