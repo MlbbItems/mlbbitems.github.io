@@ -22,31 +22,34 @@
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
   </nav>
-<!-- Fixed icon on the right side -->
-<div class="fixed-icon">
-  <img src="mlbbitems.png" alt="MLBB Items Icon">
-</div>
 
   <main>
-    <div class="card">
-      <h2>Mobile App Preview</h2>
-      <p>Check out screenshots from the MLBB Items mobile application.</p>
+    <!-- Flex container for card + right icon -->
+    <div class="card-container">
+      <div class="card">
+        <h2>Mobile App Preview</h2>
+        <p>Check out screenshots from the MLBB Items mobile application.</p>
 
-      <div class="app-preview">
-        <div class="screenshots">
-          <img src="scr1.jpg" alt="App Screenshot 1">
-          <img src="scr2.jpg" alt="App Screenshot 2">
-          <img src="scr3.jpg" alt="App Screenshot 3">
+        <div class="app-preview">
+          <div class="screenshots">
+            <img src="scr1.jpg" alt="App Screenshot 1">
+            <img src="scr2.jpg" alt="App Screenshot 2">
+            <img src="scr3.jpg" alt="App Screenshot 3">
+          </div>
         </div>
+
+        <button class="btn toggle-btn">🌙 Toggle Dark Mode</button>
       </div>
 
-      <button class="btn toggle-btn">🌙 Toggle Dark Mode</button>
+      <!-- Icon on the right of the card -->
+      <div class="card-icon">
+        <img src="mlbbitems.png" alt="MLBB Items Icon">
+      </div>
     </div>
   </main>
 
   <footer>
     &copy; 2025 MLBB Items | Not affiliated with Moonton
-  
   </footer>
 
   <script src="script.js"></script>
