@@ -64,11 +64,14 @@ main {
 }
 
 /* ===== Card + Right Icon Container ===== */
+
+/* ===== Card + Right Icon Container ===== */
 .card-container {
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  flex-wrap: wrap; /* responsive for smaller screens */
+  justify-content: center; /* center horizontally */
+  /* remove flex-wrap to keep icon beside card */
 }
 
 /* ===== Card ===== */
@@ -76,26 +79,59 @@ main {
   background: white;
   border-radius: 12px;
   padding: 30px;
-  max-width: 600px;
-  width: 100%;
+  width: 500px; /* fixed width smaller than container */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+/* ===== Card Icon ===== */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* prevent shrinking */
 }
 
-.card h2 {
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  color: #6200ea;
+.card-icon img {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
 }
 
-.card p {
-  margin-bottom: 20px;
-  line-height: 1.6;
+.card-icon img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .card-container {
+    flex-direction: column; /* stack on smaller screens */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .card-icon img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .screenshots img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-icon img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 /* ===== App Preview ===== */
