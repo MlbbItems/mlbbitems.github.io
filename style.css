@@ -11,8 +11,6 @@ body {
   background: #f5f5f5;
   color: #333;
   transition: background 0.3s, color 0.3s;
-  position: relative;
-  min-height: 100vh;
 }
 
 /* ===== Banner ===== */
@@ -65,15 +63,22 @@ main {
   padding: 40px 20px;
 }
 
+/* ===== Card + Right Icon Container ===== */
+.card-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap; /* responsive for smaller screens */
+}
+
 /* ===== Card ===== */
 .card {
   background: white;
   border-radius: 12px;
   padding: 30px;
-  max-width: 800px;
+  max-width: 600px;
   width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin: 20px 0;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -109,13 +114,32 @@ main {
 }
 
 .screenshots img {
-  width: 200px;
+  width: 180px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
 }
 
 .screenshots img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Card Icon ===== */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.card-icon img:hover {
   transform: scale(1.05);
 }
 
@@ -134,28 +158,6 @@ main {
 
 .btn:hover {
   background: #3700b3;
-}
-
-/* ===== Fixed Right-Side App Icon ===== */
-.fixed-icon {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  width: 80px;
-  height: 80px;
-  z-index: 1000;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.fixed-icon img {
-  width: 60px;
-  height: 60px;
 }
 
 /* ===== Footer ===== */
@@ -203,31 +205,26 @@ body.dark .btn:hover {
 }
 
 /* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-  nav {
+@media (max-width: 900px) {
+  .card-container {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 20px;
   }
 
-  .screenshots {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  .card-icon img {
+    width: 100px;
+    height: 100px;
   }
 
   .screenshots img {
     width: 150px;
   }
+}
 
-  .card {
-    padding: 20px;
-  }
-
-  .fixed-icon {
-    position: fixed;
-    top: auto;
-    bottom: 20px;
-    right: 20px;
-    transform: none;
+@media (max-width: 500px) {
+  .card-icon img {
+    width: 80px;
+    height: 80px;
   }
 }
