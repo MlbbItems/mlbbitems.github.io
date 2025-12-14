@@ -19,27 +19,20 @@ body {
   max-height: 300px;
   object-fit: cover;
   display: block;
+  border-bottom: 4px solid #6200ea;
 }
 
 /* ===== Header ===== */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
   background: #6200ea;
   color: white;
+  text-align: center;
   padding: 20px;
-  font-size: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.app-icon {
-  width: 48px;
-  height: 48px;
-}
-
-/* ===== Nav ===== */
+/* ===== Navigation ===== */
 nav {
   display: flex;
   justify-content: center;
@@ -52,11 +45,14 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: opacity 0.2s;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
 }
 
 nav a:hover {
-  opacity: 0.8;
+  background: #6200ea;
+  color: #fff;
 }
 
 /* ===== Main ===== */
@@ -71,82 +67,58 @@ main {
 .card {
   background: white;
   border-radius: 12px;
-  padding: 20px;
-  max-width: 800px; /* fits screenshots + app info */
+  padding: 30px;
+  max-width: 800px;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   margin: 20px 0;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .card h2 {
-  margin-bottom: 10px;
-  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
   color: #6200ea;
 }
 
 .card p {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 /* ===== App Preview ===== */
 .app-preview {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* wrap on small screens */
-  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Screenshots layout */
 .screenshots {
   display: flex;
-  flex-direction: column; /* vertical on desktop */
   gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .screenshots img {
   width: 200px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
-/* App info layout (right of screenshots) */
-.app-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  max-width: 220px;
-  text-align: center;
+.screenshots img:hover {
+  transform: scale(1.05);
 }
 
-.app-info h3 {
-  color: #6200ea;
-  margin: 0;
-}
-
-.app-info p {
-  font-size: 0.95rem;
-}
-
-.app-info .app-icon-large {
-  width: 80px;
-  height: 80px;
-}
-
-.app-info .btn {
-  margin-top: 10px;
-}
-
-/* ===== Buttons ===== */
+/* ===== Button ===== */
 .btn {
-  position: relative;
-  overflow: hidden;
   background: #6200ea;
   color: white;
   border: none;
@@ -154,7 +126,7 @@ main {
   border-radius: 8px;
   font-size: 1rem;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 20px;
   transition: background 0.3s;
 }
 
@@ -162,93 +134,7 @@ main {
   background: #3700b3;
 }
 
-.toggle-btn {
-  margin-top: 20px;
-}
-
-/* Ripple effect */
-.btn span.ripple {
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 0.6s linear;
-  background: rgba(255,255,255,0.7);
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
-}
-
 /* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #6200ea;
-  color: white;
-  margin-top: 40px;
-}
-
-/* ===== Dark Mode ===== */
-body.dark {
-  background: #121212;
-  color: #e0e0e0;
-}
-
-body.dark .card {
-  background: #1e1e1e;
-  color: #e0e0e0;
-}
-
-body.dark header,
-body.dark footer {
-  background: #1f1f1f;
-}
-
-body.dark nav {
-  background: #333;
-}
-
-body.dark nav a {
-  color: #bb86fc;
-}
-
-body.dark .card h2 {
-  color: #bb86fc;
-}
-
-body.dark .btn {
-  background: #bb86fc;
-}
-
-body.dark .btn:hover {
-  background: #985eff;
-}
-
-/* ===== Forms (future pages) ===== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #6200ea;
-  outline: none;
-}
-/* ===== Footer Icon ===== */
 footer {
   position: relative;
   text-align: center;
@@ -267,11 +153,46 @@ footer {
   height: 48px;
 }
 
-/* ===== Responsive ===== */
+/* ===== Dark Mode ===== */
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header {
+  background: #1f1f1f;
+}
+
+body.dark nav {
+  background: #333;
+}
+
+body.dark nav a {
+  color: #bb86fc;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark .card h2 {
+  color: #bb86fc;
+}
+
+body.dark .btn {
+  background: #bb86fc;
+}
+
+body.dark .btn:hover {
+  background: #985eff;
+}
+
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
-  .app-preview {
+  nav {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
 
   .screenshots {
@@ -284,7 +205,7 @@ footer {
     width: 150px;
   }
 
-  .app-info {
-    max-width: 100%;
+  .card {
+    padding: 20px;
   }
 }
