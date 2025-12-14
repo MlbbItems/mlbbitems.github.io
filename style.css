@@ -248,6 +248,24 @@ textarea:focus {
   border-color: #6200ea;
   outline: none;
 }
+/* ===== Footer Icon ===== */
+footer {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  background: #6200ea;
+  color: white;
+  margin-top: 40px;
+}
+
+.footer-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
