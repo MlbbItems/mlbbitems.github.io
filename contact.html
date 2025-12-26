@@ -2,49 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact | Modern Material Website</title>
+  <title>Contact | MLBB Items</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    📬 Contact Me
+    📬 Contact Us
   </header>
 
   <nav>
-   <a href="index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy policy</a>    
+    <a href="privacy.html">Privacy policy</a>
     <a href="about.html">About</a>
   </nav>
 
   <main>
     <div class="card">
       <h2>Get in Touch</h2>
-    <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/meorqglj"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
 
-</form>
+      <form
+        action="https://formspree.io/f/meorqglj"
+        method="POST"
+        class="contact-form"
+      >
+        <label>
+          Your email:
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Your message:
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="btn">Send</button>
+      </form>
     </div>
+
     <button class="btn toggle-btn">🌙 Toggle Dark Mode</button>
   </main>
 
   <footer>
-    &copy; 2025 My Website | Made with ❤️
+    &copy; 2025 MLBB Items | Made with ❤️
   </footer>
 
   <script src="script.js"></script>
