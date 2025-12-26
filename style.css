@@ -283,6 +283,11 @@ body.dark .btn:hover {
   margin: 16px 0;
   flex-wrap: wrap;
 }
+@media (min-width: 768px) {
+  .playstore-link img {
+    height: 52px;
+  }
+}
 
 .playstore-link img {
   height: 48px;
