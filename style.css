@@ -275,6 +275,19 @@ body.dark .btn:hover {
     width: 150px;
   }
 }
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.playstore-link img {
+  height: 48px;
+  display: block;
+}
 
 @media (max-width: 500px) {
   .card-icon img {
