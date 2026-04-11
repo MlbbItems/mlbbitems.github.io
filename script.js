@@ -1,3 +1,29 @@
+const owner = "MlbbItems";
+const repo = "mlbbitems"; // change if needed
+
+async function loadLatestRelease() {
+  const btn = document.getElementById("github-download");
+
+  try {
+    const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`);
+    const data = await res.json();
+
+    if (data.assets && data.assets.length > 0) {
+      const apk = data.assets.find(a => a.name.endsWith(".apk"));
+      btn.href = apk ? apk.browser_download_url : data.assets[0].browser_download_url;
+    } else {
+      btn.href = data.html_url;
+    }
+
+    btn.textContent = `⬇ Download ${data.tag_name}`;
+  } catch (err) {
+    console.error(err);
+    btn.textContent = "⚠ Failed to load download";
+  }
+}
+
+loadLatestRelease();
+
 // ===== Cookie Helpers =====
 function setCookie(name, value, days) {
   let expires = "";
