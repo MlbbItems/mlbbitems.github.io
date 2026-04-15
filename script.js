@@ -5,26 +5,27 @@ async function loadLatestRelease() {
   const btn = document.getElementById("github-download");
 
   try {
+    // loading state
+    btn.querySelector(".big").textContent = "Loading...";
+
     const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`);
     const data = await res.json();
 
-    console.log(data); // 🔍 debug (check browser console)
+    console.log(data);
 
     if (data.assets && data.assets.length > 0) {
-      // pick APK specifically
       const apk = data.assets.find(a => a.name.toLowerCase().endsWith(".apk"));
 
       btn.href = apk ? apk.browser_download_url : data.assets[0].browser_download_url;
-      btn.textContent = `⬇ Download ${data.tag_name}`;
+      btn.querySelector(".big").textContent = `Download ${data.tag_name}`;
     } else {
-      // fallback if no files uploaded
       btn.href = data.html_url;
-      btn.textContent = `View Release ${data.tag_name}`;
+      btn.querySelector(".big").textContent = `View ${data.tag_name}`;
     }
 
   } catch (err) {
     console.error(err);
-    btn.textContent = "⚠ Failed to load download";
+    btn.querySelector(".big").textContent = "Failed to load";
   }
 }
 
