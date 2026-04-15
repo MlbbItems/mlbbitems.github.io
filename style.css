@@ -228,3 +228,61 @@ nav a {
     max-width: 250px;
   }
 }
+/* ===== CONTACT PAGE ===== */
+.contact-card {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+/* ===== FORM ===== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== INPUT GROUP ===== */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+/* ===== INPUTS ===== */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #0f172a;
+  color: white;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* ===== BUTTON ===== */
+.submit-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
