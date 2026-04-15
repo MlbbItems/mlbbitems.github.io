@@ -173,3 +173,58 @@ footer {
     width: 100px;
   }
 }
+/* ===== NAV MOBILE ===== */
+nav {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+/* ===== STACK LAYOUT ON MOBILE ===== */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .card-icon img {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* ===== SCREENSHOTS MOBILE SCROLL ===== */
+.screenshots {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-bottom: 10px;
+}
+
+.screenshots img {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+/* ===== BUTTON FULL WIDTH ON MOBILE ===== */
+@media (max-width: 500px) {
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .playstore-link img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
