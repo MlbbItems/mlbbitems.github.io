@@ -58,15 +58,19 @@ document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('click', function(e) {
     if (this.classList.contains('toggle-btn')) return;
 
+    let x = e.touches ? e.touches[0].clientX : e.clientX;
+    let y = e.touches ? e.touches[0].clientY : e.clientY;
+
     let ripple = document.createElement("span");
     ripple.classList.add("ripple");
-    ripple.style.left = e.clientX - e.target.offsetLeft + "px";
-    ripple.style.top = e.clientY - e.target.offsetTop + "px";
+
+    const rect = this.getBoundingClientRect();
+    ripple.style.left = (x - rect.left) + "px";
+    ripple.style.top = (y - rect.top) + "px";
+
     this.appendChild(ripple);
 
-    setTimeout(() => {
-      ripple.remove();
-    }, 600);
+    setTimeout(() => ripple.remove(), 600);
   });
 });
 
