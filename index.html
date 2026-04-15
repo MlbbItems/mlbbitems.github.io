@@ -28,51 +28,52 @@
     <a href="about.html">About</a>
   </nav>
 
-  <main>
-    <!-- Flex container for card + right icon -->
-    <div class="card-container">
+ <main>
+  <div class="card-container">
 
-      <div class="card">
-        <h2>Mobile App Preview</h2>
-        <p>Check out screenshots from the MLBB Items mobile application.</p>
+    <div class="card">
+      <h2>Mobile App Preview</h2>
+      <p>Check out screenshots from the MLBB Items mobile application.</p>
 
-        <div class="app-preview">
-          <div class="screenshots">
-            <img src="scr1.jpg" alt="App Screenshot 1">
-            <img src="scr2.jpg" alt="App Screenshot 2">
-            <img src="scr3.jpg" alt="App Screenshot 3">
+      <div class="app-preview">
+        <div class="screenshots">
+          <img src="scr1.jpg" alt="App Screenshot 1">
+          <img src="scr2.jpg" alt="App Screenshot 2">
+          <img src="scr3.jpg" alt="App Screenshot 3">
+        </div>
+      </div>
+
+      <!-- ✅ FIX: wrap buttons -->
+      <div class="download-buttons">
+        <a id="github-download" class="download-btn" href="#" target="_blank">
+          <img src="mlbbitems.png" alt="App Icon">
+          <div class="text">
+            <span class="small">Download from website</span>
+            <span class="big">MLBB Items APK</span>
           </div>
-        </div>
+        </a>
 
-        <!-- Download buttons -->
-    <a id="github-download" class="download-btn" href="#" target="_blank">
-  <img src="mlbbitems.png" alt="App Icon">
-  <div class="text">
-    <span class="small">Download from website</span>
-    <span class="big">MLBB Items APK</span>
-  </div>
-</a>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.zapps.mlbbitems"
-            target="_blank"
-            rel="noopener"
-            class="playstore-link">
-            <img
-              src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-              alt="Get it on Google Play">
-          </a>
-        </div>
-
-        <button class="btn toggle-btn">🌙 Toggle Dark Mode</button>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.zapps.mlbbitems"
+          target="_blank"
+          rel="noopener"
+          class="playstore-link">
+          <img
+            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+            alt="Get it on Google Play">
+        </a>
       </div>
 
-      <!-- Icon on the right -->
-      <div class="card-icon">
-        <img src="mlbbitems.png" alt="MLBB Items Icon">
-      </div>
-
+      <button class="btn toggle-btn">🌙 Toggle Dark Mode</button>
     </div>
-  </main>
+
+    <!-- Icon -->
+    <div class="card-icon">
+      <img src="mlbbitems.png" alt="MLBB Items Icon">
+    </div>
+
+  </div>
+</main>
 
   <footer>
     &copy; 2025 MLBB Items | Not affiliated with Moonton
