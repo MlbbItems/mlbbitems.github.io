@@ -9,7 +9,7 @@
 <body>
 
   <header>
-    📬 Contact Us
+    MLBB Items
   </header>
 
   <nav>
@@ -20,25 +20,26 @@
   </nav>
 
   <main>
-    <div class="card">
-      <h2>Get in Touch</h2>
+    <div class="card contact-card">
+      <h2>📬 Contact Us</h2>
+      <p class="subtitle">Have questions or feedback? Send us a message.</p>
 
       <form
         action="https://formspree.io/f/meorqglj"
         method="POST"
         class="contact-form"
       >
-        <label>
-          Your email:
-          <input type="email" name="email" required>
-        </label>
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </div>
 
-        <label>
-          Your message:
-          <textarea name="message" rows="5" required></textarea>
-        </label>
+        <div class="input-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+        </div>
 
-        <button type="submit" class="btn">Send</button>
+        <button type="submit" class="btn submit-btn">Send Message</button>
       </form>
     </div>
 
